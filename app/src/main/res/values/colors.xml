@@ -9,4 +9,5 @@
     <color name="blue_300">#0E3DFF</color>
     <color name="blue_200">#0E69FF</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="non_active_element_bright">#E7E7E7</color>
 </resources>
