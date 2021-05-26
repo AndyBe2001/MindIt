@@ -63,4 +63,157 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.09" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="665dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separator">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="380dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="13dp"
+                    android:autofillHints="@string/newTask_title"
+                    android:background="@drawable/rounded_edittext"
+                    android:ems="10"
+                    android:hint="@string/newTask_title"
+                    android:inputType="text"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:selectAllOnFocus="false"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/new_task_backText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/newTask_list_head"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp">
+
+                    <EditText
+                        android:id="@+id/editTextTextPersonName2"
+                        android:layout_width="380dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="13dp"
+                        android:autofillHints="@string/newTask_list_newList"
+                        android:background="@drawable/rounded_edittext"
+                        android:ems="10"
+                        android:hint="@string/newTask_list_newList"
+                        android:inputType="text"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="40dp"
+                        android:selectAllOnFocus="false"
+                        android:textSize="17sp" />
+
+                    <ImageButton
+                        android:id="@+id/new_task_addList"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/addList_description"
+                        android:background="@drawable/addBtn2"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="30dp"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/new_task_backText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/newTask_startSetting"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="380dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="13dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_marginTop="5dp"
+                    android:autofillHints="@string/newTask_startSetting_timeDate"
+                    android:hint="@string/newTask_startSetting_timeDate"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="40dp"
+                    android:textSize="17sp"
+                    android:selectAllOnFocus="false"
+                    android:ems="10"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/new_task_backText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/newTask_classSetting"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/new_task_classChoose"
+                android:layout_width="380dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_edittext"
+                android:layout_marginStart="13dp"
+                android:text="@string/newTask_classSetting_add"
+                android:textSize="17sp"
+                android:textColor="#909090"
+                android:textAlignment="textStart"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/newTask_confirmTask"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

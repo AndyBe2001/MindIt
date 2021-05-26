@@ -1,6 +1,7 @@
 <resources>
     <!--App Name-->
     <string name="app_name">Mind It</string>
+
     <!--Entity Text-->
     <!--General-->
     <string name="cancelBtn">取消</string>
@@ -10,7 +11,15 @@
     <string name="welcome_page_button_text">+創建新任務</string>
     <!--New Task Page-->
     <string name="newTask_header">創建新任務</string>
-    <!--menu-->
+    <string name="newTask_title">任務名稱</string>
+    <string name="newTask_list_head">凊單</string>
+    <string name="newTask_list_newList">新增凊單元素</string>
+    <string name="newTask_startSetting">啟動設定</string>
+    <string name="newTask_startSetting_timeDate">日期及時間</string>
+    <string name="newTask_classSetting">類別設定</string>
+    <string name="newTask_classSetting_add">類別選擇</string>
+    <string name="newTask_confirmTask">創建任務完成</string>
+    <!--Menu Page-->
     <string name="menu_header">其他</string>
     <string name="menu_account_disconnect">登入/註冊</string>
     <string name="menu_setting_head">設定</string>
@@ -19,8 +28,10 @@
     <string name="menu_about_head">關於</string>
     <string name="menu_about_version">版本</string>
     <string name="menu_about_actual_version">0.2</string>
+
     <!--Entity Description-->
     <string name="welcome_page_imageview_description">Welcome Image</string>
     <string name="backBtn_description">Back Button</string>
     <string name="user_icon_description">User Icon</string>
+    <string name="addList_description">Add Icon</string>
 </resources>
