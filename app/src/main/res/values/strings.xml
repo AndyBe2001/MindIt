@@ -54,9 +54,17 @@
     <string name="ch_tw_main_header">首頁</string>
     <string name="ch_tw_main_sort_date">日期</string>
     <string name="ch_tw_main_sort_class">類別</string>
+    <string name="ch_tw_main_date_today">今天</string>
+    <string name="ch_tw_main_date_tomorrow">明天</string>
+    <string name="ch_tw_main_date_later">之後</string>
+    <string name="ch_tw_main_date_notSet">未設</string>
     <string name="en_en_main_header">Home</string>
     <string name="en_en_main_sort_date">Date</string>
     <string name="en_en_main_sort_class">Class</string>
+    <string name="en_en_main_date_today">Today</string>
+    <string name="en_en_main_date_tomorrow">Tomorrow</string>
+    <string name="en_en_main_date_later">Later</string>
+    <string name="en_en_main_date_notSet">Not Set</string>
     <string name="addTask_button"></string>
     <!--Menu Page-->
     <string name="ch_tw_menu_header">其他</string>
