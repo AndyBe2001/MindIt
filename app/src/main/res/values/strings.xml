@@ -4,49 +4,83 @@
 
     <!--Entity Text-->
     <!--General-->
-    <string name="cancelBtn">取消</string>
-    <string name="returnBtn">返回</string>
+    <string name="ch_tw_cancelBtn">取消</string>
+    <string name="ch_tw_returnBtn">返回</string>
+    <string name="en_en_cancelBtn">Cancel</string>
+    <string name="en_en_returnBtn">Return</string>
     <string name="separator"></string>
     <!--Welcome Page-->
-    <string name="welcome_page_textview_message">祝您有個美好一天！請點下按鈕來開始。</string>
-    <string name="welcome_page_button_text">+創建新任務</string>
+    <string name="ch_tw_welcome_page_textview_message">祝您有個美好一天！請點下按鈕來開始。</string>
+    <string name="ch_tw_welcome_page_button_text">+ 創建新任務</string>
+    <string name="en_en_welcome_page_textview_message">Welcome, have a great day! Please push the button to start.</string>
+    <string name="en_en_welcome_page_button_text">+ New Task</string>
     <!--New Task Page-->
-    <string name="newTask_header">創建新任務</string>
-    <string name="newTask_title">任務名稱</string>
-    <string name="newTask_list_head">凊單</string>
-    <string name="newTask_list_newList">新增凊單元素</string>
-    <string name="newTask_startSetting">啟動設定</string>
-    <string name="newTask_startSetting_timeDate">日期及時間</string>
-    <string name="newTask_classSetting">類別設定</string>
-    <string name="newTask_classSetting_add">類別選擇</string>
-    <string name="newTask_confirmTask">創建任務完成</string>
+    <string name="ch_tw_newTask_header">創建新任務</string>
+    <string name="ch_tw_newTask_title">任務名稱</string>
+    <string name="ch_tw_newTask_list_head">凊單</string>
+    <string name="ch_tw_newTask_list_newList">新增凊單元素</string>
+    <string name="ch_tw_newTask_startSetting">啟動設定</string>
+    <string name="ch_tw_newTask_startSetting_timeDate">日期及時間</string>
+    <string name="ch_tw_newTask_classSetting">類別設定</string>
+    <string name="ch_tw_newTask_classSetting_add">類別選擇</string>
+    <string name="ch_tw_newTask_confirmTask">創建任務完成</string>
+    <string name="en_en_newTask_header">New Task Creation</string>
+    <string name="en_en_newTask_title">Task Title</string>
+    <string name="en_en_newTask_list_head">List</string>
+    <string name="en_en_newTask_list_newList">Add List Element</string>
+    <string name="en_en_newTask_startSetting">Start Setting</string>
+    <string name="en_en_newTask_startSetting_timeDate">Time and Date</string>
+    <string name="en_en_newTask_classSetting">Class Setting</string>
+    <string name="en_en_newTask_classSetting_add">Choose Class</string>
+    <string name="en_en_newTask_confirmTask">Creation Done</string>
     <!--View Task Page-->
-    <string name="viewTask_header">任務細節</string>
-    <string name="viewTask_title">任務名稱</string>
-    <string name="viewTask_list_head">清單</string>
-    <string name="viewTask_startSetting">啟動設定</string>
-    <string name="viewTask_startSetting_timeDate">日期及時間</string>
-    <string name="viewTask_classSetting">類別設定</string>
-    <string name="viewTask_editTask">修改任務</string>
-    <string name="viewTask_finishTask">任務完成</string>
+    <string name="ch_tw_viewTask_header">任務細節</string>
+    <string name="ch_tw_viewTask_title">任務名稱</string>
+    <string name="ch_tw_viewTask_list_head">清單</string>
+    <string name="ch_tw_viewTask_startSetting">啟動設定</string>
+    <string name="ch_tw_viewTask_startSetting_timeDate">日期及時間</string>
+    <string name="ch_tw_viewTask_classSetting">類別設定</string>
+    <string name="ch_tw_viewTask_editTask">修改任務</string>
+    <string name="ch_tw_viewTask_finishTask">任務完成</string>
+    <string name="en_en_viewTask_header">View Task</string>
+    <string name="en_en_viewTask_title">Task Title</string>
+    <string name="en_en_viewTask_list_head">List</string>
+    <string name="en_en_viewTask_startSetting">Start Setting</string>
+    <string name="en_en_viewTask_startSetting_timeDate">Time and Date</string>
+    <string name="en_en_viewTask_classSetting">Class Setting</string>
+    <string name="en_en_viewTask_editTask">Edit Task</string>
+    <string name="en_en_viewTask_finishTask">Complete Task</string>
     <!--Main Page-->
-    <string name="main_header">首頁</string>
-    <string name="main_sort_date">日期</string>
-    <string name="main_sort_class">類別</string>
+    <string name="ch_tw_main_header">首頁</string>
+    <string name="ch_tw_main_sort_date">日期</string>
+    <string name="ch_tw_main_sort_class">類別</string>
+    <string name="en_en_main_header">Home</string>
+    <string name="en_en_main_sort_date">Date</string>
+    <string name="en_en_main_sort_class">Class</string>
     <string name="addTask_button"></string>
     <!--Menu Page-->
-    <string name="menu_header">其他</string>
-    <string name="menu_account_disconnect">登入/註冊</string>
-    <string name="menu_setting_head">設定</string>
-    <string name="menu_setting_language">語言</string>
-    <string name="menu_setting_appearance">外觀</string>
-    <string name="menu_about_head">關於</string>
-    <string name="menu_about_version">版本</string>
+    <string name="ch_tw_menu_header">其他</string>
+    <string name="ch_tw_menu_account_disconnect">登入/註冊</string>
+    <string name="ch_tw_menu_setting_head">設定</string>
+    <string name="ch_tw_menu_setting_language">語言</string>
+    <string name="ch_tw_menu_setting_appearance">外觀</string>
+    <string name="ch_tw_menu_about_head">關於</string>
+    <string name="ch_tw_menu_about_version">版本</string>
+    <string name="en_en_menu_header">Other</string>
+    <string name="en_en_menu_account_disconnect">Login/Register</string>
+    <string name="en_en_menu_setting_head">Setting</string>
+    <string name="en_en_menu_setting_language">Language</string>
+    <string name="en_en_menu_setting_appearance">Appearance</string>
+    <string name="en_en_menu_about_head">About</string>
+    <string name="en_en_menu_about_version">Version</string>
     <string name="menu_about_actual_version">0.2</string>
     <!--Category Selection-->
-    <string name="categorySelection_header">類別選擇</string>
-    <string name="categorySelection_newClass">新增類別</string>
-    <string name="categorySelection_confirm">確定</string>
+    <string name="ch_tw_categorySelection_header">類別選擇</string>
+    <string name="ch_tw_categorySelection_newClass">新增類別</string>
+    <string name="ch_tw_categorySelection_confirm">確定</string>
+    <string name="en_en_categorySelection_header">Class Selection</string>
+    <string name="en_en_categorySelection_newClass">New Class</string>
+    <string name="en_en_categorySelection_confirm">Confirm</string>
 
     <!--Entity Description-->
     <string name="welcome_page_imageview_description">Welcome Image</string>
