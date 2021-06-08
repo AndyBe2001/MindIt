@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindIt">
-        <activity android:name=".Menu"></activity>
+        <activity android:name=".View_task"></activity>
+        <activity android:name=".Menu" />
         <activity android:name=".New_task" />
         <activity android:name=".Welcome_Page" />
         <activity android:name=".MainActivity">

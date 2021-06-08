@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".New_task">
+    tools:context=".View_task">
 
     <ImageButton
         android:id="@+id/new_task_backBtn"
@@ -40,7 +40,7 @@
         android:id="@+id/new_task_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/newTask_header"
+        android:text="@string/viewTask_header"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -66,13 +66,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="685dp"
+        android:layout_height="630dp"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator"
-        app:layout_constraintVertical_bias="0.65">
+        app:layout_constraintVertical_bias="0.65"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,7 +86,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <EditText
+                <TextView
                     android:id="@+id/editTextTextPersonName"
                     android:layout_width="380dp"
                     android:layout_height="45dp"
@@ -92,12 +94,13 @@
                     android:autofillHints="@string/newTask_title"
                     android:background="@drawable/rounded_edittext"
                     android:ems="10"
-                    android:hint="@string/newTask_title"
-                    android:inputType="text"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:paddingTop="10dp"
                     android:selectAllOnFocus="false"
-                    android:textSize="22sp" />
+                    android:text="@string/viewTask_title"
+                    android:textSize="22sp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/new_task_backText2"
@@ -117,37 +120,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp">
-
-                    <EditText
-                        android:id="@+id/editTextTextPersonName2"
-                        android:layout_width="380dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="13dp"
-                        android:autofillHints="@string/newTask_list_newList"
-                        android:background="@drawable/rounded_edittext"
-                        android:ems="10"
-                        android:hint="@string/newTask_list_newList"
-                        android:inputType="text"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="40dp"
-                        android:selectAllOnFocus="false"
-                        android:textSize="17sp" />
-
-                    <ImageButton
-                        android:id="@+id/new_task_addList"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="30dp"
-                        android:background="@drawable/add_btn2"
-                        android:contentDescription="@string/addList_description" />
-                </RelativeLayout>
-
                 <TextView
                     android:id="@+id/new_task_backText3"
                     android:layout_width="match_parent"
@@ -159,22 +131,22 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editTextDate"
+                <TextView
+                    android:id="@+id/viewTask_Date"
                     android:layout_width="380dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="13dp"
                     android:layout_marginTop="5dp"
-                    android:autofillHints="@string/newTask_startSetting_timeDate"
                     android:background="@drawable/rounded_edittext"
-                    android:ems="10"
-                    android:hint="@string/newTask_startSetting_timeDate"
-                    android:inputType="date"
                     android:paddingStart="10dp"
-                    android:paddingEnd="40dp"
-                    android:selectAllOnFocus="false"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="7dp"
+                    android:text="@string/viewTask_startSetting_timeDate"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
+            </LinearLayout>
                 <TextView
                     android:id="@+id/new_task_backText5"
                     android:layout_width="match_parent"
@@ -186,22 +158,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/new_task_classChoose"
-                android:layout_width="380dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/rounded_edittext"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/newTask_classSetting_add"
-                android:textAlignment="textStart"
-                android:textColor="#909090"
-                android:textSize="17sp" />
-
         </LinearLayout>
     </ScrollView>
 
@@ -209,7 +165,7 @@
         android:id="@+id/button3"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/newTask_confirmTask"
+        android:text="@string/viewTask_editTask"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:background="@drawable/rounded_button"
@@ -218,6 +174,21 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952"/>
+        app:layout_constraintVertical_bias="0.890" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/viewTask_finishTask"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

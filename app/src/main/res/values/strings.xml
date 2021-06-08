@@ -19,6 +19,15 @@
     <string name="newTask_classSetting">類別設定</string>
     <string name="newTask_classSetting_add">類別選擇</string>
     <string name="newTask_confirmTask">創建任務完成</string>
+    <!--View Task Page-->
+    <string name="viewTask_header">任務細節</string>
+    <string name="viewTask_title">任務名稱</string>
+    <string name="viewTask_list_head">清單</string>
+    <string name="viewTask_startSetting">啟動設定</string>
+    <string name="viewTask_startSetting_timeDate">日期及時間</string>
+    <string name="viewTask_classSetting">類別設定</string>
+    <string name="viewTask_editTask">修改任務</string>
+    <string name="viewTask_finishTask">任務完成</string>
     <!--Main Page-->
     <string name="main_header">首頁</string>
     <string name="main_sort_date">日期</string>
