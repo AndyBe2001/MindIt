@@ -93,7 +93,7 @@
         android:id="@+id/button6"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/newTask_icon"
+        android:background="@drawable/newtask_icon"
         android:text="@string/addTask_button"
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
