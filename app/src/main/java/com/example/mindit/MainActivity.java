@@ -1,12 +1,10 @@
 package com.example.mindit;
 
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextWatcher;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,14 +38,15 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             setLanguage();
+
         }
     }
 
     void setLanguage(){
-        TextView main_header = (TextView)findViewById(R.id.main_header);
-        TextView main_sort_date = (TextView)findViewById(R.id.main_sort_date);
-        TextView main_sort_class = (TextView)findViewById(R.id.main_sort_class);
-        switch(prefs.getString("lang",0)){
+        TextView main_header = findViewById(R.id.main_header);
+        TextView main_sort_date = findViewById(R.id.main_sort_date);
+        TextView main_sort_class = findViewById(R.id.main_sort_class);
+        switch(prefs.getInt("lang",0)){
             case 0:
                 main_header.setText(R.string.en_en_main_header);
                 main_sort_date.setText(R.string.en_en_main_sort_date);
