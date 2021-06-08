@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences appPreference = null;
     SharedPreferences userContent = null;
     SharedPreferences taskContent = null;
+    Button newTaskBtn;
     LinearLayout contentLayout;
 
     @Override
@@ -26,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         appPreference = getSharedPreferences("com.example.mindit",MODE_PRIVATE);
+        newTaskBtn = findViewById(R.id.new_taskBtn);
+
+        newTaskBtn.setOnClickListener((v) -> {
+            Intent myIntent = new Intent(this, New_task.class);
+            startActivity(myIntent);
+        });
     }
 
     @Override
@@ -140,7 +147,17 @@ public class MainActivity extends AppCompatActivity {
         else{
             //Display Class and its task
             for(int i = 1; i<=userContent.getInt("numClass",0);i++){
-                for
+                //Display Class Name
+                bigText.setText(userContent.getString("class"+i,""));
+                contentLayout.addView(bigText);
+                for(int j = 1; i <= userContent.getInt("numTask",0); j++){
+                    taskContent = getSharedPreferences(taskID+i,MODE_PRIVATE);
+                    String taskClass = taskContent.getString("class","");
+                    if(taskClass.equals(userContent.getString("class"+i,""))){
+                        text.setText(taskContent.getString("taskName",""));
+                        contentLayout.addView(text);
+                    }
+                }
             }
         }
     }
