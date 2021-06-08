@@ -19,6 +19,11 @@
     <string name="newTask_classSetting">類別設定</string>
     <string name="newTask_classSetting_add">類別選擇</string>
     <string name="newTask_confirmTask">創建任務完成</string>
+    <!--Main Page-->
+    <string name="main_header">首頁</string>
+    <string name="main_sort_date">日期</string>
+    <string name="main_sort_class">類別</string>
+    <string name="addTask_button"></string>
     <!--Menu Page-->
     <string name="menu_header">其他</string>
     <string name="menu_account_disconnect">登入/註冊</string>

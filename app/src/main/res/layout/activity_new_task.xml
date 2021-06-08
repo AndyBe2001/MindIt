@@ -66,12 +66,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="665dp"
+        android:layout_height="685dp"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separator">
+        app:layout_constraintTop_toBottomOf="@+id/separator"
+        app:layout_constraintVertical_bias="0.65">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -141,10 +142,10 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
-                        android:contentDescription="@string/addList_description"
-                        android:background="@drawable/addBtn2"
                         android:layout_centerVertical="true"
-                        android:layout_marginEnd="30dp"/>
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/add_btn2"
+                        android:contentDescription="@string/addList_description" />
                 </RelativeLayout>
 
                 <TextView
@@ -163,16 +164,16 @@
                     android:layout_width="380dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="13dp"
-                    android:background="@drawable/rounded_edittext"
                     android:layout_marginTop="5dp"
                     android:autofillHints="@string/newTask_startSetting_timeDate"
+                    android:background="@drawable/rounded_edittext"
+                    android:ems="10"
                     android:hint="@string/newTask_startSetting_timeDate"
+                    android:inputType="date"
                     android:paddingStart="10dp"
                     android:paddingEnd="40dp"
-                    android:textSize="17sp"
                     android:selectAllOnFocus="false"
-                    android:ems="10"
-                    android:inputType="date" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:id="@+id/new_task_backText5"
@@ -191,14 +192,15 @@
                 android:id="@+id/new_task_classChoose"
                 android:layout_width="380dp"
                 android:layout_height="40dp"
-                android:background="@drawable/rounded_edittext"
                 android:layout_marginStart="13dp"
-                android:text="@string/newTask_classSetting_add"
-                android:textSize="17sp"
-                android:textColor="#909090"
-                android:textAlignment="textStart"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_edittext"
                 android:paddingStart="10dp"
-                android:paddingEnd="10dp"/>
+                android:paddingEnd="10dp"
+                android:text="@string/newTask_classSetting_add"
+                android:textAlignment="textStart"
+                android:textColor="#909090"
+                android:textSize="17sp" />
 
         </LinearLayout>
     </ScrollView>
