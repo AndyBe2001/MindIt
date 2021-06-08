@@ -5,6 +5,7 @@
     <!--Entity Text-->
     <!--General-->
     <string name="cancelBtn">取消</string>
+    <string name="returnBtn">返回</string>
     <string name="separator"></string>
     <!--Welcome Page-->
     <string name="welcome_page_textview_message">祝您有個美好一天！請點下按鈕來開始。</string>
@@ -42,6 +43,10 @@
     <string name="menu_about_head">關於</string>
     <string name="menu_about_version">版本</string>
     <string name="menu_about_actual_version">0.2</string>
+    <!--Category Selection-->
+    <string name="categorySelection_header">類別選擇</string>
+    <string name="categorySelection_newClass">新增類別</string>
+    <string name="categorySelection_confirm">確定</string>
 
     <!--Entity Description-->
     <string name="welcome_page_imageview_description">Welcome Image</string>
