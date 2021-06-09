@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences userContent = null;
     SharedPreferences taskContent = null;
     Button newTaskBtn;
+    Button sortDate;
+    Button sortClass;
     LinearLayout contentLayout;
 
     @Override
@@ -27,11 +29,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         appPreference = getSharedPreferences("com.example.mindit",MODE_PRIVATE);
-        newTaskBtn = findViewById(R.id.new_taskBtn);
+        this.contentLayout = findViewById(R.id.mainPage_content);
+        newTaskBtn = (Button)findViewById(R.id.main_newtaskBtn);
+        sortDate = (Button)findViewById(R.id.main_sort_date);
+        sortClass = (Button)findViewById(R.id.main_sort_class);
 
-        newTaskBtn.setOnClickListener((v) -> {
-            Intent myIntent = new Intent(this, New_task.class);
-            startActivity(myIntent);
+        newTaskBtn.setOnClickListener((v)->{
+            Intent intent = new Intent(this,New_task.class);
+            startActivity(intent);
+        });
+        sortDate.setOnClickListener((v)->{
+            appPreference.edit().putInt("sortType",0).apply();
+            contentLayout.removeAllViews();
+            displayTask();
+        });
+        sortClass.setOnClickListener((v)->{
+            appPreference.edit().putInt("sortType",1).apply();
+            contentLayout.removeAllViews();
+            displayTask();
         });
     }
 
@@ -40,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         //Initialization again
         if(appPreference.getBoolean("firstRun",true)){ //First Time of Launch
-            Intent myIntent = new Intent(this,Welcome_Page.class);
-            startActivity(myIntent);
             appPreference.edit()
                     .putBoolean("firstRun",false)
                     .putInt("sortType",0)
@@ -54,93 +67,117 @@ public class MainActivity extends AppCompatActivity {
                     .putInt("numTask",0)
                     .putInt("numClass",0)
                     .apply();
+            Intent myIntent = new Intent(this,Welcome_Page.class);
+            startActivity(myIntent);
         }
-        else{ //If it's not the first time
-            String userInfo = "com.example.mindit.user"+appPreference.getInt("isUser",0);
-            userContent = getSharedPreferences(userInfo,MODE_PRIVATE);
+        displayTask();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        contentLayout.removeAllViews();
+    }
+
+    void displayTask(){
+        if(appPreference.getInt("sortType",0)==0){
+            sortDate.setBackground(getResources().getDrawable(R.drawable.rounded_button));
+            sortClass.setBackground(getResources().getDrawable(R.drawable.rounded_button_unselected));
         }
+        else{
+            sortClass.setBackground(getResources().getDrawable(R.drawable.rounded_button));
+            sortDate.setBackground(getResources().getDrawable(R.drawable.rounded_button_unselected));
+        }
+        String userInfo = "com.example.mindit.user"+appPreference.getInt("isUser",0);
+        userContent = getSharedPreferences(userInfo,MODE_PRIVATE);
         setLanguage();
         //Display content
-        this.contentLayout = findViewById(R.id.mainPage_content);
         String taskID = "com.example.mindit.user"+appPreference.getInt("isUser",0)+".task";
-        //Set classification Text parameter
-        TextView bigText = new TextView(this);
-        LinearLayout.LayoutParams bigParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        bigParams.setMargins(13,10,13,0);
-        bigText.setLayoutParams(bigParams);
-        bigText.setTextColor(getResources().getColor(R.color.black));
-        bigText.setTextSize(20);
-        bigText.setTypeface(Typeface.DEFAULT_BOLD);
-        //Set task Text parameter
-        Button text = new Button(this);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(380,40);
-        params.setMargins(13,5,13,0);
-        text.setLayoutParams(params);
-        text.setBackgroundResource(R.drawable.rounded_edittext);
-        text.setTextColor(getResources().getColor(R.color.black));
-        text.setTextSize(17);
+        String bigText, buttonText;
         if(appPreference.getInt("sortType",0)==0) {
             //Display Today
-            switch(appPreference.getInt("lang",0)){
-                case 0:bigText.setText(R.string.en_en_main_date_today);break;
-                case 1:bigText.setText(R.string.ch_tw_main_date_today);break;
+            switch (appPreference.getInt("lang", 0)) {
+                case 0:
+                    bigText = getResources().getString(R.string.en_en_main_date_today);
+                    break;
+                case 1:
+                    bigText = getResources().getString(R.string.ch_tw_main_date_today);
+                    break;
+                default:
+                    bigText = "Error";
             }
-            contentLayout.addView(bigText);
+            addbigText(bigText);
             //Display Today task
             String today = getCurrentDate();
             for (int i = 1; i <= userContent.getInt("numTask", 0); i++) {
-                taskContent = getSharedPreferences(taskID+i,MODE_PRIVATE);
-                if(today.equals(taskContent.getString("date",""))){
-                    text.setText(taskContent.getString("taskName",""));
-                    contentLayout.addView(text);
+                taskContent = getSharedPreferences(taskID + i, MODE_PRIVATE);
+                if (today.equals(taskContent.getString("date", ""))) {
+                    buttonText = taskContent.getString("taskName", "");
+                    addbuttonText(buttonText);
                 }
             }
             //Display Tomorrow
-            switch(appPreference.getInt("lang",0)){
-                case 0:bigText.setText(R.string.en_en_main_date_tomorrow);break;
-                case 1:bigText.setText(R.string.ch_tw_main_date_tomorrow);break;
+            switch (appPreference.getInt("lang", 0)) {
+                case 0:
+                    bigText = getResources().getString(R.string.en_en_main_date_tomorrow);
+                    break;
+                case 1:
+                    bigText = getResources().getString(R.string.ch_tw_main_date_tomorrow);
+                    break;
+                default:
+                    bigText = "Error";
             }
-            contentLayout.addView(bigText);
+            addbigText(bigText);
             //Display Tomorrow task
             String tomorrow = getTomorrowDate();
             for (int i = 1; i <= userContent.getInt("numTask", 0); i++) {
-                taskContent = getSharedPreferences(taskID+i,MODE_PRIVATE);
-                if(tomorrow.equals(taskContent.getString("date",""))){
-                    text.setText(taskContent.getString("taskName",""));
-                    contentLayout.addView(text);
+                taskContent = getSharedPreferences(taskID + i, MODE_PRIVATE);
+                if (tomorrow.equals(taskContent.getString("date", ""))) {
+                    buttonText = taskContent.getString("taskName", "");
+                    addbuttonText(buttonText);
                 }
             }
             //Display Later
-            switch(appPreference.getInt("lang",0)){
-                case 0:bigText.setText(R.string.en_en_main_date_later);break;
-                case 1:bigText.setText(R.string.ch_tw_main_date_later);break;
+            switch (appPreference.getInt("lang", 0)) {
+                case 0:
+                    bigText = getResources().getString(R.string.en_en_main_date_later);
+                    break;
+                case 1:
+                    bigText = getResources().getString(R.string.ch_tw_main_date_later);
+                    break;
+                default:
+                    bigText = "Error";
             }
-            contentLayout.addView(bigText);
+            addbigText(bigText);
             //Display Later task
             for (int i = 1; i <= userContent.getInt("numTask", 0); i++) {
-                taskContent = getSharedPreferences(taskID+i,MODE_PRIVATE);
-                String taskDate = taskContent.getString("date","");
-                if((!taskDate.equals(today))&&(!taskDate.equals(tomorrow))&&(!taskDate.equals(""))){
-                    text.setText(taskContent.getString("taskName",""));
-                    contentLayout.addView(text);
+                taskContent = getSharedPreferences(taskID + i, MODE_PRIVATE);
+                String taskDate = taskContent.getString("date", "");
+                if ((!taskDate.equals(today)) && (!taskDate.equals(tomorrow)) && (!taskDate.equals(""))) {
+                    buttonText = taskContent.getString("taskName", "");
+                    addbuttonText(buttonText);
                 }
             }
             //Display Not Set
             switch(appPreference.getInt("lang",0)){
-                case 0:bigText.setText(R.string.en_en_main_date_notSet);break;
-                case 1:bigText.setText(R.string.ch_tw_main_date_notSet);break;
+                case 0:
+                    bigText = getResources().getString(R.string.en_en_main_date_notSet);
+                    break;
+                case 1:
+                    bigText = getResources().getString(R.string.ch_tw_main_date_notSet);
+                    break;
+                default:
+                    bigText = "Error";
             }
-            contentLayout.addView(bigText);
+            addbigText(bigText);
             //Display Not Set Task
             for (int i = 1; i <= userContent.getInt("numTask", 0); i++) {
                 taskContent = getSharedPreferences(taskID+i,MODE_PRIVATE);
                 String taskDate = taskContent.getString("date","");
                 if(!taskDate.equals("")){
-                    text.setText(taskContent.getString("taskName",""));
-                    contentLayout.addView(text);
+                    buttonText = taskContent.getString("taskName","");
+                    addbuttonText(buttonText);
                 }
             }
         }
@@ -148,33 +185,33 @@ public class MainActivity extends AppCompatActivity {
             //Display Class and its task
             for(int i = 1; i<=userContent.getInt("numClass",0);i++){
                 //Display Class Name
-                bigText.setText(userContent.getString("class"+i,""));
-                contentLayout.addView(bigText);
+                bigText = userContent.getString("class"+i,"");
+                addbigText(bigText);
                 for(int j = 1; i <= userContent.getInt("numTask",0); j++){
                     taskContent = getSharedPreferences(taskID+i,MODE_PRIVATE);
-                    String taskClass = taskContent.getString("class","");
-                    if(taskClass.equals(userContent.getString("class"+i,""))){
-                        text.setText(taskContent.getString("taskName",""));
-                        contentLayout.addView(text);
+                    for(int k = 1; k<= taskContent.getInt("numClass",0); i++) {
+                        if (taskContent.getString("class" + k, "").equals(userContent.getString("class" + j, ""))) {
+                            buttonText = taskContent.getString("taskName", "");
+                            addbuttonText(buttonText);
+                        }
                     }
                 }
             }
         }
     }
-
     void setLanguage(){
         TextView main_header = findViewById(R.id.main_header);
         TextView main_sort_date = findViewById(R.id.main_sort_date);
         TextView main_sort_class = findViewById(R.id.main_sort_class);
         switch(appPreference.getInt("lang",0)){
             case 0:
-                main_header.setText(R.string.en_en_main_header);
-                main_sort_date.setText(R.string.en_en_main_sort_date);
-                main_sort_class.setText(R.string.en_en_main_sort_class);break;
+                main_header.setText(getResources().getString(R.string.en_en_main_header));
+                main_sort_date.setText(getResources().getString(R.string.en_en_main_sort_date));
+                main_sort_class.setText(getResources().getString(R.string.en_en_main_sort_class));break;
             case 1:
-                main_header.setText(R.string.ch_tw_main_header);
-                main_sort_date.setText(R.string.ch_tw_main_sort_date);
-                main_sort_class.setText(R.string.ch_tw_main_sort_class);break;
+                main_header.setText(getResources().getString(R.string.ch_tw_main_header));
+                main_sort_date.setText(getResources().getString(R.string.ch_tw_main_sort_date));
+                main_sort_class.setText(getResources().getString(R.string.ch_tw_main_sort_class));break;
         }
     }
     String getCurrentDate(){
@@ -243,5 +280,17 @@ public class MainActivity extends AppCompatActivity {
         }
         date=date + " " + (day);
         return date;
+    }
+    void addbigText(String title){
+        View cricketerView = getLayoutInflater().inflate(R.layout.big_text,contentLayout,false);
+        TextView bigText = (TextView)cricketerView.findViewById(R.id.bigText);
+        bigText.setText(title);
+        contentLayout.addView(cricketerView);
+    }
+    void addbuttonText(String text){
+        View cricketerView = getLayoutInflater().inflate(R.layout.task_display,contentLayout,false);
+        Button buttonText = (Button)cricketerView.findViewById(R.id.taskText);
+        buttonText.setText(text);
+        contentLayout.addView(cricketerView);
     }
 }

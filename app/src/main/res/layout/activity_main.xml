@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.049" />
 
     <ImageButton
-        android:id="@+id/main_header"
+        android:id="@+id/main_menu"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/user_icon"
@@ -73,8 +73,8 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:text="@string/ch_tw_main_sort_date"
-                android:textColor="#000000"
-                app:cornerRadius="15dp" />
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button" />
 
             <Button
                 android:id="@+id/main_sort_class"
@@ -84,29 +84,32 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:text="@string/ch_tw_main_sort_class"
-                android:textColor="#000000"
-                app:cornerRadius="15dp" />
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button" />
 
         </LinearLayout>
     </HorizontalScrollView>
 
     <ScrollView
-        android:layout_width="380dp"
-        android:layout_height="730dp"
+        android:id="@+id/mainPage_content_parent"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/mainPage_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical"/>
     </ScrollView>
 
     <Button
-        android:id="@+id/new_taskBtn"
+        android:id="@+id/main_newtaskBtn"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/newtask_icon"
@@ -117,7 +120,7 @@
         app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927" />
+        app:layout_constraintVertical_bias="0.97" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

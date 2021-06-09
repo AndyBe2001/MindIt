@@ -20,9 +20,9 @@
         app:srcCompat="@drawable/dayflow_work_from_home" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcome_message"
         android:layout_width="231dp"
-        android:layout_height="98dp"
+        android:layout_height="70dp"
         android:text="@string/ch_tw_welcome_page_textview_message"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -38,8 +38,9 @@
         android:layout_width="209dp"
         android:layout_height="60dp"
         android:text="@string/ch_tw_welcome_page_button_text"
+        android:textColor="@color/white"
         android:textSize="24sp"
-        app:cornerRadius="360dp"
+        android:background="@drawable/rounded_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

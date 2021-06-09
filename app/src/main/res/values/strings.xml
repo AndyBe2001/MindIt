@@ -90,6 +90,9 @@
     <string name="en_en_categorySelection_newClass">New Class</string>
     <string name="en_en_categorySelection_confirm">Confirm</string>
 
+    <!--Else-->
+    <string name="emptyText"></string>
+
     <!--Entity Description-->
     <string name="welcome_page_imageview_description">Welcome Image</string>
     <string name="backBtn_description">Back Button</string>
