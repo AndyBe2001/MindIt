@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences appPreference = null;
     SharedPreferences userContent = null;
     SharedPreferences taskContent = null;
+    ImageButton menuBtn;
     Button newTaskBtn;
     Button sortDate;
     Button sortClass;
@@ -30,10 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
         appPreference = getSharedPreferences("com.example.mindit",MODE_PRIVATE);
         this.contentLayout = findViewById(R.id.mainPage_content);
+        menuBtn = (ImageButton) findViewById(R.id.main_menu);
         newTaskBtn = (Button)findViewById(R.id.main_newtaskBtn);
         sortDate = (Button)findViewById(R.id.main_sort_date);
         sortClass = (Button)findViewById(R.id.main_sort_class);
 
+        menuBtn.setOnClickListener((v)->{
+            Intent intent = new Intent(this,Menu.class);
+            startActivity(intent);
+        });
         newTaskBtn.setOnClickListener((v)->{
             Intent intent = new Intent(this,New_task.class);
             startActivity(intent);

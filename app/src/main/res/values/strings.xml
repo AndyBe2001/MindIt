@@ -89,6 +89,24 @@
     <string name="en_en_categorySelection_header">Class Selection</string>
     <string name="en_en_categorySelection_newClass">New Class</string>
     <string name="en_en_categorySelection_confirm">Confirm</string>
+    <!--Language Menu-->
+    <string name="en_en_language_header">Language Setting</string>
+    <string name="ch_tw_language_header">語言設定</string>
+    <string name="language_english_english">English</string>
+    <string name="language_chinese_taiwan">中文(繁體)</string>
+    <!--Login Menu-->
+    <string name="en_en_login_header">Login</string>
+    <string name="en_en_login_userID">User ID</string>
+    <string name="en_en_login_password">Password</string>
+    <string name="en_en_login_forgot">Forgot Password</string>
+    <string name="en_en_login_register">Register</string>
+    <string name="en_en_login_login">Login</string>
+    <string name="ch_tw_login_header">登入</string>
+    <string name="ch_tw_login_userID">帳號ID</string>
+    <string name="ch_tw_login_password">密碼</string>
+    <string name="ch_tw_login_forgot">忘記密碼</string>
+    <string name="ch_tw_login_register">註冊</string>
+    <string name="ch_tw_login_login">登入</string>
 
     <!--Else-->
     <string name="ch_tw_editBox_Text">請輸入文字</string>

@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -61,7 +64,30 @@ public class Category_Selection extends AppCompatActivity {
                 case 1:checkBox_title.setHint(getResources().getString(R.string.ch_tw_editBox_Text));break;
                 default:checkBox_title.setHint("Error");
             }
+            temporaryClass.add(checkBox_title.getText().toString());
+            checkBox_title.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    temporaryClass.remove(checkBox_title.getText().toString());
+                }
 
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    temporaryClass.add(checkBox_title.getText().toString());
+                }
+            });
+            CheckBox checkBox_check = (CheckBox)cricketerView.findViewById(R.id.checkBox_check);
+            checkBox_check.setOnClickListener((w)->{
+            });
+            Button checkBox_delete = (Button)cricketerView.findViewById(R.id.checkBox_delete);
+            checkBox_delete.setOnClickListener((w)->{
+                categoryList.removeView(w);
+            });
             categoryList.addView(cricketerView);
         });
 

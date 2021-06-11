@@ -6,23 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Menu">
 
-    <TextView
-        android:id="@+id/backText"
+    <Button
+        android:id="@+id/menu_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableStart="@drawable/ic_back"
         android:text="@string/ch_tw_cancelBtn"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.038" />
 
     <TextView
-        android:id="@+id/header"
+        android:id="@+id/menu_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ch_tw_menu_header"
@@ -37,7 +40,7 @@
         app:layout_constraintVertical_bias="0.044" />
 
     <TextView
-        android:id="@+id/header2"
+        android:id="@+id/menu_setting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ch_tw_menu_setting_head"
@@ -52,7 +55,7 @@
         app:layout_constraintVertical_bias="0.223" />
 
     <TextView
-        android:id="@+id/header3"
+        android:id="@+id/menu_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ch_tw_menu_about_head"
@@ -64,10 +67,10 @@
         app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
+        app:layout_constraintVertical_bias="0.427" />
 
     <TextView
-        android:id="@+id/header4"
+        android:id="@+id/menu_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ch_tw_menu_about_version"
@@ -79,10 +82,10 @@
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        app:layout_constraintVertical_bias="0.465" />
 
     <TextView
-        android:id="@+id/header5"
+        android:id="@+id/menu_actual_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/menu_about_actual_version"
@@ -93,7 +96,7 @@
         app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        app:layout_constraintVertical_bias="0.465" />
 
     <TextView
         android:id="@+id/separator"
@@ -132,10 +135,10 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.401" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/menu_userImage"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:contentDescription="@string/user_icon_description"
@@ -147,51 +150,61 @@
         app:layout_constraintVertical_bias="0.115"
         app:srcCompat="@drawable/user_icon" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/menu_userName"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/ch_tw_menu_account_disconnect"
+        android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintHorizontal_bias="0.876"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintVertical_bias="0.125" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/menu_language"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:text="@string/ch_tw_menu_setting_language"
         android:textAlignment="textStart"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:cornerRadius="10dp"
+        android:background="@drawable/rounded_edittext"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267" />
+        app:layout_constraintVertical_bias="0.273" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/menu_appearance"
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:text="@string/ch_tw_menu_setting_appearance"
         android:textAlignment="textStart"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:cornerRadius="10dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_edittext"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.345" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
