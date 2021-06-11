@@ -6,41 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".Category_Selection">
 
-    <ImageButton
-        android:id="@+id/new_task_backBtn"
-        android:layout_width="23dp"
-        android:layout_height="32dp"
-        android:background="@drawable/back"
-        android:contentDescription="@string/backBtn_description"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044"
-        app:srcCompat="@drawable/back" />
-
-    <TextView
-        android:id="@+id/new_task_backText"
+    <Button
+        android:id="@+id/categorySelection_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableStart="@drawable/ic_back"
         android:text="@string/ch_tw_cancelBtn"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.036" />
 
     <TextView
-        android:id="@+id/new_task_header"
+        android:id="@+id/categorySelection_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ch_tw_categorySelection_header"
+        android:text="@string/ch_tw_newTask_header"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -66,57 +53,47 @@
 
     <ScrollView
         android:layout_width="409dp"
-        android:layout_height="692dp"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separator">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.488">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/categorySelection_listCategory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"></LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp">
+            <Button
+                android:id="@+id/categorySelection_addCategoryBtn"
+                android:layout_width="380dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/rounded_edittext"
+                android:drawableEnd="@drawable/ic_addbox"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:selectAllOnFocus="false"
+                android:text="@string/ch_tw_categorySelection_newClass"
+                android:textAlignment="textStart"
+                android:textColor="#6F6F6F"
+                android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/editTextTextPersonName2"
-                    android:layout_width="380dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="13dp"
-                    android:autofillHints="@string/ch_tw_categorySelection_newClass"
-                    android:background="@drawable/rounded_edittext"
-                    android:ems="10"
-                    android:hint="@string/ch_tw_categorySelection_newClass"
-                    android:inputType="text"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="40dp"
-                    android:selectAllOnFocus="false"
-                    android:textSize="20sp" />
-
-                <ImageButton
-                    android:id="@+id/new_task_addList"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/add_btn2"
-                    android:contentDescription="@string/addList_description" />
-            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/categorySelection_confirmBtn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/ch_tw_categorySelection_confirm"

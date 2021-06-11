@@ -91,7 +91,8 @@
     <string name="en_en_categorySelection_confirm">Confirm</string>
 
     <!--Else-->
-    <string name="emptyText"></string>
+    <string name="ch_tw_editBox_Text">請輸入文字</string>
+    <string name="en_en_editBox_Text">Input Text</string>
 
     <!--Entity Description-->
     <string name="welcome_page_imageview_description">Welcome Image</string>

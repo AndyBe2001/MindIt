@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".View_task">
 
-    <ImageButton
-        android:id="@+id/new_task_backBtn"
-        android:layout_width="23dp"
-        android:layout_height="32dp"
-        android:background="@drawable/back"
-        android:contentDescription="@string/backBtn_description"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044"
-        app:srcCompat="@drawable/back" />
-
     <TextView
         android:id="@+id/new_task_backText"
         android:layout_width="wrap_content"
@@ -67,14 +52,14 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="630dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator"
-        app:layout_constraintVertical_bias="0.65"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,12 +80,12 @@
                     android:background="@drawable/rounded_edittext"
                     android:ems="10"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
                     android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
                     android:selectAllOnFocus="false"
                     android:text="@string/ch_tw_viewTask_title"
-                    android:textSize="22sp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/new_task_backText2"
@@ -139,24 +124,25 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/rounded_edittext"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
                     android:paddingTop="7dp"
+                    android:paddingEnd="10dp"
                     android:text="@string/ch_tw_viewTask_startSetting_timeDate"
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>
-                <TextView
-                    android:id="@+id/new_task_backText5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/ch_tw_newTask_classSetting"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/new_task_backText5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/ch_tw_newTask_classSetting"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

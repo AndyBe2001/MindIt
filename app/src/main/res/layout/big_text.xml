@@ -14,5 +14,5 @@
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:text="@string/emptyText"/>
+        android:text="@string/separator"/>
 </LinearLayout>
