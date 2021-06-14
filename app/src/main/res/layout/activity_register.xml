@@ -6,4 +6,156 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
+    <Button
+        android:id="@+id/register_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableStart="@drawable/ic_back"
+        android:text="@string/ch_tw_cancelBtn"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/register_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ch_tw_register_header"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="380dp"
+        android:layout_height="2dp"
+        android:background="@android:color/black"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+        android:id="@+id/register_userID"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_userID"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_register_userID"
+        android:inputType="textPersonName"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
+
+    <EditText
+        android:id="@+id/register_userPW"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_password"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_register_password"
+        android:inputType="textPassword"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <EditText
+        android:id="@+id/register_userPW_confirm"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_password_confirm"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_register_password_confirm"
+        android:inputType="textPassword"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.345" />
+
+    <EditText
+        android:id="@+id/register_forgot_question"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_forgot_question"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_register_forgot_question"
+        android:inputType="text"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405" />
+
+    <EditText
+        android:id="@+id/register_forgot_answer"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_forgot_answer"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_register_forgot_answer"
+        android:inputType="text"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <Button
+        android:id="@+id/register_register"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/ch_tw_register_register"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.665" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

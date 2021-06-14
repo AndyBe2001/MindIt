@@ -96,8 +96,7 @@ public class MainActivity extends AppCompatActivity {
             sortClass.setBackground(getResources().getDrawable(R.drawable.rounded_button));
             sortDate.setBackground(getResources().getDrawable(R.drawable.rounded_button_unselected));
         }
-        String userInfo = "com.example.mindit.user"+appPreference.getInt("isUser",0);
-        userContent = getSharedPreferences(userInfo,MODE_PRIVATE);
+        userContent = getSharedPreferences("com.example.mindit.user"+appPreference.getInt("isUser",0),MODE_PRIVATE);
         setLanguage();
         //Display content
         String taskID = "com.example.mindit.user"+appPreference.getInt("isUser",0)+".task";
@@ -105,14 +104,9 @@ public class MainActivity extends AppCompatActivity {
         if(appPreference.getInt("sortType",0)==0) {
             //Display Today
             switch (appPreference.getInt("lang", 0)) {
-                case 0:
-                    bigText = getResources().getString(R.string.en_en_main_date_today);
-                    break;
-                case 1:
-                    bigText = getResources().getString(R.string.ch_tw_main_date_today);
-                    break;
-                default:
-                    bigText = "Error";
+                case 0:bigText = getResources().getString(R.string.en_en_main_date_today);break;
+                case 1:bigText = getResources().getString(R.string.ch_tw_main_date_today);break;
+                default:bigText = "Error";
             }
             addbigText(bigText);
             //Display Today task
@@ -120,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 1; i <= userContent.getInt("numTask", 0); i++) {
                 taskContent = getSharedPreferences(taskID + i, MODE_PRIVATE);
                 if (today.equals(taskContent.getString("date", ""))) {
-                    buttonText = taskContent.getString("taskName", "");
+                    buttonText = taskContent.getString("title", "");
                     addbuttonText(buttonText);
                 }
             }
@@ -141,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 1; i <= userContent.getInt("numTask", 0); i++) {
                 taskContent = getSharedPreferences(taskID + i, MODE_PRIVATE);
                 if (tomorrow.equals(taskContent.getString("date", ""))) {
-                    buttonText = taskContent.getString("taskName", "");
+                    buttonText = taskContent.getString("title", "");
                     addbuttonText(buttonText);
                 }
             }
@@ -162,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 taskContent = getSharedPreferences(taskID + i, MODE_PRIVATE);
                 String taskDate = taskContent.getString("date", "");
                 if ((!taskDate.equals(today)) && (!taskDate.equals(tomorrow)) && (!taskDate.equals(""))) {
-                    buttonText = taskContent.getString("taskName", "");
+                    buttonText = taskContent.getString("title", "");
                     addbuttonText(buttonText);
                 }
             }
@@ -183,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 taskContent = getSharedPreferences(taskID+i,MODE_PRIVATE);
                 String taskDate = taskContent.getString("date","");
                 if(!taskDate.equals("")){
-                    buttonText = taskContent.getString("taskName","");
+                    buttonText = taskContent.getString("title","");
                     addbuttonText(buttonText);
                 }
             }
@@ -198,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                     taskContent = getSharedPreferences(taskID+i,MODE_PRIVATE);
                     for(int k = 1; k<= taskContent.getInt("numClass",0); i++) {
                         if (taskContent.getString("class" + k, "").equals(userContent.getString("class" + j, ""))) {
-                            buttonText = taskContent.getString("taskName", "");
+                            buttonText = taskContent.getString("title", "");
                             addbuttonText(buttonText);
                         }
                     }
@@ -226,18 +220,18 @@ public class MainActivity extends AppCompatActivity {
         String date;
         date = Integer.toString(1900+c.getYear());
         switch(c.getMonth()){
-            case 0:date=date+" Jan";break;
-            case 1:date=date+" Feb";break;
-            case 2:date=date+" Mar";break;
-            case 3:date=date+" Apr";break;
-            case 4:date=date+" May";break;
-            case 5:date=date+" Jun";break;
-            case 6:date=date+" Jul";break;
-            case 7:date=date+" Aug";break;
-            case 8:date=date+" Sep";break;
-            case 9:date=date+" Oct";break;
-            case 10:date=date+" Nov";break;
-            case 11:date=date+" Dec";break;
+            case 0:date=date+"/01/";break;
+            case 1:date=date+"/02/";break;
+            case 2:date=date+"/03/";break;
+            case 3:date=date+"/04/";break;
+            case 4:date=date+"/05/";break;
+            case 5:date=date+"/06/";break;
+            case 6:date=date+"/07/";break;
+            case 7:date=date+"/08/";break;
+            case 8:date=date+"/09/";break;
+            case 9:date=date+"/10/";break;
+            case 10:date=date+"/11/";break;
+            case 11:date=date+"/12/";break;
         }
         date=date + c.getDate();
         return date;
@@ -272,20 +266,21 @@ public class MainActivity extends AppCompatActivity {
 
         date=Integer.toString(year);
         switch(month){
-            case 0:date=date+" Jan";break;
-            case 1:date=date+" Feb";break;
-            case 2:date=date+" Mar";break;
-            case 3:date=date+" Apr";break;
-            case 4:date=date+" May";break;
-            case 5:date=date+" Jun";break;
-            case 6:date=date+" Jul";break;
-            case 7:date=date+" Aug";break;
-            case 8:date=date+" Sep";break;
-            case 9:date=date+" Oct";break;
-            case 10:date=date+" Nov";break;
-            case 11:date=date+" Dec";break;
+            case 0:date=date+"/01/";break;
+            case 1:date=date+"/02/";break;
+            case 2:date=date+"/03/";break;
+            case 3:date=date+"/04/";break;
+            case 4:date=date+"/05/";break;
+            case 5:date=date+"/06/";break;
+            case 6:date=date+"/07/";break;
+            case 7:date=date+"/08/";break;
+            case 8:date=date+"/09/";break;
+            case 9:date=date+"/10/";break;
+            case 10:date=date+"/11/";break;
+            case 11:date=date+"/12/";break;
         }
-        date=date + " " + (day);
+        if(day<10){date=date+"0"+(day);}
+        else{date=date + (day);}
         return date;
     }
     void addbigText(String title){

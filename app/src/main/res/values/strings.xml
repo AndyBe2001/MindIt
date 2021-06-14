@@ -8,7 +8,7 @@
     <string name="ch_tw_returnBtn">返回</string>
     <string name="en_en_cancelBtn">Cancel</string>
     <string name="en_en_returnBtn">Return</string>
-    <string name="separator"></string>
+    <string name="separator"> </string>
     <!--Welcome Page-->
     <string name="ch_tw_welcome_page_textview_message">祝您有個美好一天！請點下按鈕來開始。</string>
     <string name="ch_tw_welcome_page_button_text">+ 創建新任務</string>
@@ -65,7 +65,7 @@
     <string name="en_en_main_date_tomorrow">Tomorrow</string>
     <string name="en_en_main_date_later">Later</string>
     <string name="en_en_main_date_notSet">Not Set</string>
-    <string name="addTask_button"></string>
+    <string name="addTask_button"> </string>
     <!--Menu Page-->
     <string name="ch_tw_menu_header">其他</string>
     <string name="ch_tw_menu_account_disconnect">登入/註冊</string>
@@ -104,9 +104,43 @@
     <string name="ch_tw_login_header">登入</string>
     <string name="ch_tw_login_userID">帳號ID</string>
     <string name="ch_tw_login_password">密碼</string>
-    <string name="ch_tw_login_forgot">忘記密碼</string>
+    <string name="ch_tw_login_forgot">密碼忘記</string>
     <string name="ch_tw_login_register">註冊</string>
     <string name="ch_tw_login_login">登入</string>
+    <!--Register Menu-->
+    <string name="en_en_register_header">Register</string>
+    <string name="en_en_register_userID">User ID</string>
+    <string name="en_en_register_password">Password</string>
+    <string name="en_en_register_password_confirm">Confirm Password</string>
+    <string name="en_en_register_forgot_question">Personal Question (In case)</string>
+    <string name="en_en_register_forgot_answer">Answer of Personal Question</string>
+    <string name="en_en_register_register">Register</string>
+    <string name="ch_tw_register_header">註冊</string>
+    <string name="ch_tw_register_userID">帳號ID</string>
+    <string name="ch_tw_register_password">密碼</string>
+    <string name="ch_tw_register_password_confirm">確認密碼</string>
+    <string name="ch_tw_register_forgot_question">私人問題(萬一)</string>
+    <string name="ch_tw_register_forgot_answer">私人問題答案</string>
+    <string name="ch_tw_register_register">註冊</string>
+    <!--Forgot Menu-->
+    <string name="en_en_forgot_header">Forgot Password</string>
+    <string name="en_en_forgot_userID">User ID</string>
+    <string name="en_en_forgot_question_header">Personal Question</string>
+    <string name="en_en_forgot_question_field">Please Input User ID First</string>
+    <string name="en_en_forgot_answer_header">Personal Question Answer</string>
+    <string name="en_en_forgot_answer_field">Please Input User ID First</string>
+    <string name="en_en_forgot_answer_field_2">Answer</string>
+    <string name="en_en_forgot_password_header">Password</string>
+    <string name="en_en_forgot_password_field">Please Complete The Field Bellow</string>
+    <string name="ch_tw_forgot_header">密碼忘記</string>
+    <string name="ch_tw_forgot_userID">帳號ID</string>
+    <string name="ch_tw_forgot_question_header">私人問題</string>
+    <string name="ch_tw_forgot_question_field">請先輸入帳號ID</string>
+    <string name="ch_tw_forgot_answer_header">私人問題答案</string>
+    <string name="ch_tw_forgot_answer_field">請先輸入帳號ID</string>
+    <string name="ch_tw_forgot_answer_field_2">答案</string>
+    <string name="ch_tw_forgot_password_header">密碼</string>
+    <string name="ch_tw_forgot_password_field">請先輸入以上的資料</string>
 
     <!--Else-->
     <string name="ch_tw_editBox_Text">請輸入文字</string>

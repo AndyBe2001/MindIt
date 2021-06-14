@@ -29,6 +29,13 @@ public class Welcome_Page extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        finish();
+    }
+
     void setLanguage(){
         TextView welcome_message = (TextView)findViewById(R.id.welcome_message);
         Button welcome_btn = (Button)findViewById(R.id.welcome_page_beginBtn);

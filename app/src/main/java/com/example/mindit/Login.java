@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
@@ -37,6 +38,7 @@ public class Login extends AppCompatActivity {
         registerBtn = (Button)findViewById(R.id.login_register);
         login = (Button)findViewById(R.id.login_login);
 
+        setLanguage();
         backBtn.setOnClickListener((v)->finish());
         forgotBtn.setOnClickListener((v)->{
             Intent intent = new Intent(this,Forgot.class);
@@ -52,8 +54,8 @@ public class Login extends AppCompatActivity {
                 String inputPW = loginPW.getText().toString();
                 for(int i=1;i<=appPreference.getInt("numUser",0);i++){
                     userContent = getSharedPreferences("com.example.mindit.user"+i,MODE_PRIVATE);
-                    if(inputID.equals(userContent.getString("ID","")) && inputPW.equals(userContent.getString("Password",""))){
-                        appPreference.edit().putInt("isUser",0).apply();
+                    if(inputID.equals(userContent.getString("ID","")) && inputPW.equals(userContent.getString("PW",""))){
+                        appPreference.edit().putInt("isUser",i).apply();
                         loggedIn = true;
                     }
                 }
@@ -74,5 +76,27 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    void setLanguage(){
+        TextView header = (TextView)findViewById(R.id.login_header);
+        switch(appPreference.getInt("lang",0)){
+            case 0:
+                backBtn.setText(getResources().getString(R.string.en_en_cancelBtn));
+                header.setText(getResources().getString(R.string.en_en_login_header));
+                loginID.setHint(getResources().getString(R.string.en_en_login_userID));
+                loginPW.setHint(getResources().getString(R.string.en_en_login_password));
+                registerBtn.setText(getResources().getString(R.string.en_en_login_register));
+                forgotBtn.setText(getResources().getString(R.string.en_en_login_forgot));
+                login.setText(getResources().getString(R.string.en_en_login_login));break;
+            case 1:
+                backBtn.setText(getResources().getString(R.string.ch_tw_cancelBtn));
+                header.setText(getResources().getString(R.string.ch_tw_login_header));
+                loginID.setHint(getResources().getString(R.string.ch_tw_login_userID));
+                loginPW.setHint(getResources().getString(R.string.ch_tw_login_password));
+                registerBtn.setText(getResources().getString(R.string.ch_tw_login_register));
+                forgotBtn.setText(getResources().getString(R.string.ch_tw_login_forgot));
+                login.setText(getResources().getString(R.string.ch_tw_login_login));break;
+        }
     }
 }

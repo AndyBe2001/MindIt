@@ -25,6 +25,7 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         appPreference = getSharedPreferences("com.example.mindit",MODE_PRIVATE);
+        userContent = getSharedPreferences("com.example.mindit.user"+appPreference.getInt("isUser",0),MODE_PRIVATE);
 
         backBtn = (Button)findViewById(R.id.menu_back);
         loginBtn = (Button)findViewById(R.id.menu_userName);
@@ -32,18 +33,26 @@ public class Menu extends AppCompatActivity {
         appearanceBtn = (Button)findViewById(R.id.menu_appearance);
 
         backBtn.setOnClickListener((v)->finish());
-        if(appPreference.getInt("isUser",0)!=0){
-            loginBtn.setText(userContent.getString("name",""));
-        }
-        loginBtn.setOnClickListener((v)->{
-            Intent intent = new Intent(this,Login.class);
-            startActivity(intent);
-        });
         langBtn.setOnClickListener((v)->{
             Intent intent = new Intent(this,Language.class);
             startActivity(intent);
         });
-        appearanceBtn.setOnClickListener((v)-> Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_SHORT).show());
+        appearanceBtn.setOnClickListener((v)->{
+            switch(appPreference.getInt("lang",0)) {
+                case 0:Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_SHORT).show();break;
+                case 1:Toast.makeText(getApplicationContext(), "即將推出", Toast.LENGTH_SHORT).show();break;
+            }
+        });
+        loginBtn.setOnClickListener((v)->{
+            if(appPreference.getInt("isUser",0)==0){
+                Intent intent = new Intent(this,Login.class);
+                startActivity(intent);
+            }
+            else{
+                appPreference.edit().putInt("isUser",0).apply();
+                setLanguage();
+            }
+        });
     }
 
     @Override

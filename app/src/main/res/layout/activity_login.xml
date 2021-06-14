@@ -28,7 +28,7 @@
         android:id="@+id/login_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ch_tw_menu_header"
+        android:text="@string/ch_tw_login_header"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"

@@ -6,4 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".Forgot">
 
+    <Button
+        android:id="@+id/forgot_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableStart="@drawable/ic_back"
+        android:text="@string/ch_tw_cancelBtn"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/forgot_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ch_tw_forgot_header"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="380dp"
+        android:layout_height="2dp"
+        android:background="@android:color/black"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+        android:id="@+id/forgot_id"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_userID"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_forgot_userID"
+        android:inputType="textPersonName"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
+
+    <TextView
+        android:id="@+id/forgot_question_header"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ch_tw_forgot_question_header"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.293" />
+
+    <TextView
+        android:id="@+id/forgot_question_field"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_userID"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_forgot_question_field"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        android:textSize="18sp"
+        android:paddingTop="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <TextView
+        android:id="@+id/forgot_answer_header"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ch_tw_forgot_answer_header"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.403" />
+
+    <EditText
+        android:id="@+id/forgot_answer_field"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_userID"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_forgot_answer_field"
+        android:inputType="textPersonName"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/forgot_password_header"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ch_tw_forgot_password_header"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.513" />
+
+    <TextView
+        android:id="@+id/forgot_password_field"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:autofillHints="@string/ch_tw_register_userID"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/ch_tw_forgot_password_field"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        android:textSize="18sp"
+        android:paddingTop="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
